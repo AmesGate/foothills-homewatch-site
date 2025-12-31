@@ -3,14 +3,13 @@
   --bg-muted:#f6f7f9;
   --panel:#ffffff;
 
-  --text:#0f172a;          /* deep slate */
-  --muted:#475569;         /* slate */
-  --soft:#64748b;          /* lighter slate */
+  --text:#0f172a;
+  --muted:#475569;
+  --soft:#64748b;
 
-  --accent:#0f172a;        /* keep it serious */
-  --accent2:#1f2937;
-
+  --accent:#0f172a;
   --divider:#e5e7eb;
+
   --shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
   --radius: 14px;
 
@@ -22,8 +21,8 @@
   --p: 1.02rem;
 }
 
+/* Reset */
 *{ box-sizing:border-box; }
-
 html{ scroll-behavior:smooth; }
 
 body{
@@ -60,7 +59,7 @@ body{
 }
 
 .logo{
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: 0.2px;
 }
 
@@ -78,10 +77,10 @@ body{
   padding: 0.65rem 1rem;
   border-radius: 10px;
   font-size: 0.95rem;
-  font-weight: 600;
+  font-weight: 700;
 }
 
-/* Hero */
+/* HERO */
 .hero{
   border-bottom: 1px solid var(--divider);
 }
@@ -126,7 +125,7 @@ body{
   text-decoration:none;
   padding: 0.85rem 1.25rem;
   border-radius: 12px;
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: 0.2px;
 }
 
@@ -170,23 +169,7 @@ p{
   color: var(--muted);
 }
 
-/* Accreditation panel */
-.accreditation{
-  background: var(--panel);
-  border: 1px solid var(--divider);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  padding: 1.4rem 1.4rem 1.2rem;
-  margin: 1.75rem 0 2rem;
-}
-
-.accreditation-title{
-  font-weight: 800;
-  color: var(--text);
-  margin: 0 0 1rem;
-}
-
-/* Lists */
+/* Base lists */
 ul{
   padding-left: 1.2rem;
   margin: 0.75rem 0 1.25rem;
@@ -197,7 +180,7 @@ li{
   margin: 0.35rem 0;
 }
 
-/* This fixes the weird bullet spacing you’re seeing */
+/* General bullet grid (used elsewhere) */
 .bullet-grid{
   list-style: disc;
   display: grid;
@@ -216,6 +199,64 @@ li{
 @media (max-width: 640px){
   .bullet-grid{
     grid-template-columns: 1fr;
+  }
+}
+
+/* Accreditation card (CENTERED) */
+.accreditation{
+  max-width: 760px;
+  margin: 2.5rem auto 2.5rem;
+  background: var(--panel);
+  border: 1px solid var(--divider);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.6rem 1.6rem 1.4rem;
+  text-align: center;
+}
+
+.accreditation-title{
+  font-weight: 900;
+  color: var(--text);
+  margin: 0 0 1.25rem;
+  letter-spacing: 0.2px;
+}
+
+/* Override bullet grid inside the accreditation card to look clean + centered */
+.accreditation .bullet-grid{
+  list-style: none;
+  padding-left: 0;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.85rem 1.25rem;
+  align-items: start;
+}
+
+.accreditation .bullet-grid li{
+  position: relative;
+  padding-left: 1.2rem;
+  text-align: left;
+  color: var(--muted);
+  margin: 0;
+}
+
+.accreditation .bullet-grid li::before{
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--accent);
+  font-weight: 800;
+}
+
+@media (max-width: 900px){
+  .accreditation{
+    text-align: left;
+  }
+  .accreditation .bullet-grid{
+    grid-template-columns: 1fr;
+    gap: 0.6rem;
   }
 }
 
