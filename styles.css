@@ -1,44 +1,158 @@
+:root {
+  --bg-main: #ffffff;
+  --bg-muted: #f3f4f6;
+  --text-main: #111111;
+  --text-muted: #444444;
+  --accent: #111111;
+  --max-width: 1000px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
-  font-family: system-ui, sans-serif;
-  line-height: 1.5;
-  color: #1a1a1a;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--text-main);
+  background: var(--bg-main);
+  line-height: 1.6;
 }
 
-section, header {
-  padding: 4rem 2rem;
-  max-width: 900px;
-  margin: auto;
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
 }
 
+/* Header */
+.site-header {
+  border-bottom: 1px solid #e5e5e5;
+  background: #fff;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 64px;
+}
+
+.logo {
+  font-weight: 600;
+}
+
+.header-cta {
+  text-decoration: none;
+  color: #fff;
+  background: var(--accent);
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+}
+
+/* Hero */
 .hero {
-  text-align: center;
-  padding-top: 6rem;
+  padding: 4rem 0 3rem;
 }
 
-h1, h2 {
+.hero-inner {
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  line-height: 1.2;
   margin-bottom: 1rem;
 }
 
-ul, ol {
-  padding-left: 1.5rem;
+.hero-sub {
+  max-width: 650px;
+  margin: 0 auto 2rem;
+  color: var(--text-muted);
 }
 
+/* Sections */
+.section {
+  padding: 4rem 0;
+}
+
+.section-muted {
+  background: var(--bg-muted);
+}
+
+h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.wide-text {
+  max-width: 700px;
+  color: var(--text-muted);
+}
+
+/* Lists */
+.bullet-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+  padding-left: 1.2rem;
+}
+
+/* Steps */
+.steps {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.step {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.step-number {
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+/* CTA */
 .cta {
   display: inline-block;
-  margin-top: 1.5rem;
-  padding: 0.75rem 1.5rem;
-  background: #1a1a1a;
-  color: #fff;
   text-decoration: none;
+  padding: 0.75rem 1.5rem;
 }
 
-form {
+.cta.primary {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* Contact */
+.contact-inner {
+  max-width: 600px;
+}
+
+.contact-form {
   display: grid;
   gap: 1rem;
 }
 
-input, textarea, button {
-  padding: 0.75rem;
+input,
+textarea,
+button {
   font-size: 1rem;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* Footer */
+.site-footer {
+  border-top: 1px solid #e5e5e5;
+  padding: 2rem 0;
+  font-size: 0.9rem;
+  color: var(--text-muted);
 }
